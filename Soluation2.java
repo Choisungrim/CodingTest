@@ -1,13 +1,14 @@
 import java.util.*;
-class Solution
+class Solution2 // 평균값 구하기.
 {
 	public static void main(String args[]) throws Exception
 	{
 		Scanner sc = new Scanner(System.in);
 		int result = 0;
+        double sum = 0;
 		int T;
 		T=sc.nextInt();
-		String a = sc.nextLine(); // ù��° ���� ���� ���±� ������  ��������� �������.
+		String a = sc.nextLine(); 
 		
 		String b = sc.nextLine();
 		String c = sc.nextLine();
@@ -26,12 +27,12 @@ class Solution
 				list = new ArrayList<>(Arrays.asList(d1));
 			}
 			Iterator<String> it = list.iterator();
-			int[] itarry = new int[10];
+			int[] itarry = new int[2];
 			for(int i = 0 ; i < itarry.length; i++) {
 				itarry[i]= Integer.parseInt(it.next());
-				if(itarry[i]%2!=0)
-					result += itarry[i];
-			}
+				}
+            result = (int)Math.round(sum/itarry.length);
+            sum = 0;
 			System.out.println("#"+test_case+" "+result);
 			result = 0;
 		}
